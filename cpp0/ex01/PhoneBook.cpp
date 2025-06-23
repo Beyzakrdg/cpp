@@ -6,7 +6,7 @@
 /*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 15:27:58 by air               #+#    #+#             */
-/*   Updated: 2025/06/23 13:27:17 by mac              ###   ########.fr       */
+/*   Updated: 2025/06/23 15:50:42 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,34 +36,38 @@ void PhoneBook::addContact()
 	do {
 		std::cout << "First Name: ";
 		std::getline(std::cin, input);
+		if (std::cin.eof())
+			return ;
 		if (input.empty()) {
 			std::cout << "Error: First Name cannot be empty.\n";
 		}
 	} while (input.empty());
 	new_contact.setFirstName(input);
-
 	do {
 		std::cout << "Last Name: ";
 		std::getline(std::cin, input);
+		if (std::cin.eof())
+			return ;
 		if (input.empty()) {
 			std::cout << "Error: Last Name cannot be empty.\n";
 		}
 	} while (input.empty());
 	new_contact.setLastName(input);
-
 	do {
 		std::cout << "Nickname: ";
 		std::getline(std::cin, input);
+		if (std::cin.eof())
+			return ;
 		if (input.empty()) {
 			std::cout << "Error: Nickname cannot be empty.\n";
 		}
 	} while (input.empty());
 	new_contact.setNickname(input);
-
-
 	do {
 		std::cout << "Phone Number: ";
 		std::getline(std::cin, input);
+		if (std::cin.eof())
+			return ;
 		if (input.empty()) {
 			std::cout << "Error: Phone Number cannot be empty.\n";
 		}
@@ -71,10 +75,11 @@ void PhoneBook::addContact()
 			std::cout << "Enter valid number" << std::endl;			
 	} while (input.empty() || !is_number(input));
 	new_contact.setPhoneNumber(input);
-
 	do {
 		std::cout << "Darkest Secret: ";
 		std::getline(std::cin, input);
+		if (std::cin.eof())
+			return ;
 		if (input.empty()) {
 			std::cout << "Error: Darkest Secret cannot be empty.\n";
 		}
@@ -128,12 +133,14 @@ void PhoneBook::searchContact() const
 	{
 		std::cout << "Please Enter Index" << std::endl;
 		std::getline(std::cin, index);
+		if (std::cin.eof())
+			return ;
 		if (index == "-1")
 			break;
 		i = index.c_str();
 		if (!is_number(i) || index.empty())
 			continue;
-		in = std::atoi(i);
+		in = i[0] - 48;
 		if (in >= 0 && in <= 7)
 		{
 			if (Contacts[in].getFirstName().empty())
@@ -151,13 +158,4 @@ void PhoneBook::searchContact() const
 			continue;
 		}
 	}
-
-}
-
-void PhoneBook::exitContact()
-{
-	std::cout<<"Exited from PhoneBook";
-	std::cout<<std::endl;
-	std::exit(0);
-	
 }

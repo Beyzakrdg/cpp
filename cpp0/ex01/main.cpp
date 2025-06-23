@@ -6,7 +6,7 @@
 /*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 14:20:22 by air               #+#    #+#             */
-/*   Updated: 2025/06/22 23:17:39 by mac              ###   ########.fr       */
+/*   Updated: 2025/06/23 13:45:41 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,11 @@ int main()
         else if (process == "SEARCH")
             phoneBook.searchContact();
         else if (process == "EXIT")
-            phoneBook.exitContact();
+        {
+            std::cout<<"Exited from PhoneBook";
+            std::cout<<std::endl;
+            return (0);
+        }
         else
             std::cout<<"Please write valid process"<<std::endl;
             

@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/16 14:21:33 by air               #+#    #+#             */
-/*   Updated: 2025/06/22 22:48:03 by mac              ###   ########.fr       */
+/*   Created: 2025/06/23 18:00:03 by mac               #+#    #+#             */
+/*   Updated: 2025/06/23 18:26:41 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
+#ifndef ZOMBIE_HPP
+#define ZOMBIE_HPP
 
-#include "Contact.hpp"
+#include <string>
 #include <iostream>
-#include <iomanip>
-class PhoneBook
+
+class Zombie
 {
-	private:
-		Contact Contacts[8];
-		int index;
-		int sizeContacts;
-	public:
-		PhoneBook();
-		void addContact();
-		void searchContact() const;
-		void exitContact();
+    private:
+    std::string name;
+    public:
+    Zombie(std::string name);
+    ~Zombie();
+    
+    void announce( void );
 };
 
 #endif
