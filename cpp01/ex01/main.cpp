@@ -1,19 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bekarada <bekarada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/23 17:59:46 by bekarada          #+#    #+#             */
-/*   Updated: 2025/06/25 10:50:29 by bekarada         ###   ########.fr       */
+/*   Created: 2025/06/26 14:08:56 by bekarada          #+#    #+#             */
+/*   Updated: 2025/06/26 16:18:45 by bekarada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-void    randomChump(std::string name)
+Zombie* zombieHorde( int N, std::string name );
+
+int main()
 {
-    Zombie zombie(name);
-    zombie.announce();
+	int i = 0;
+	int N = 3;
+	Zombie* newZombieHorde = zombieHorde(N, "Foo");
+	
+	while (i < N)
+	{
+		newZombieHorde[i].announce();
+		i++;
+	}
+	delete[] newZombieHorde;
+	return (0);
 }

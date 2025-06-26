@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bekarada <bekarada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/23 17:59:46 by bekarada          #+#    #+#             */
-/*   Updated: 2025/06/25 10:50:29 by bekarada         ###   ########.fr       */
+/*   Created: 2025/06/26 17:58:04 by bekarada          #+#    #+#             */
+/*   Updated: 2025/06/26 18:12:25 by bekarada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanA.hpp"
 
-void    randomChump(std::string name)
+HumanA::HumanA(std::string name, Weapon& weapon) : weapon(weapon)
 {
-    Zombie zombie(name);
-    zombie.announce();
+    this->name = name;
+    std::cout << "constructor started and humanA get " << &weapon << std::endl; 
+}
+
+void    HumanA::attack()
+{
+    std::cout << name << " attacks with their " << weapon.getType() << std::endl;
 }

@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bekarada <bekarada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/23 18:00:00 by bekarada          #+#    #+#             */
-/*   Updated: 2025/06/25 10:50:43 by bekarada         ###   ########.fr       */
+/*   Created: 2025/06/26 18:25:31 by bekarada          #+#    #+#             */
+/*   Updated: 2025/06/26 18:40:28 by bekarada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanB.hpp"
 
-Zombie::Zombie(std::string name)
+HumanB::HumanB(std::string name)
 {
     this->name = name;
+    weapon = NULL;
+        std::cout << "constructor started humanB"<< std::endl; 
 }
 
-Zombie::~Zombie()
+void HumanB::setWeapon(Weapon& weapon)
 {
-    std::cout<< name << " destroyed";
-    std::cout<<std::endl;
+    this->weapon = &weapon;
 }
 
-void    Zombie::announce(void)
-{
-    std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+void HumanB::attack() {
+    if (weapon)
+        std::cout << name << " attacks with their " << weapon->getType() << std::endl;
+    else
+        std::cout << name << " has no weapon to attack!" << std::endl;
 }
