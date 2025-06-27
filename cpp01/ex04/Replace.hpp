@@ -1,8 +1,20 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Replace.hpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bekarada <bekarada@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/27 11:30:27 by bekarada          #+#    #+#             */
+/*   Updated: 2025/06/27 11:40:04 by bekarada         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef REPLACE_HPP
 #define REPLACE_HPP
+
 #include <iostream>
+#include <fstream>
 
 class Replace
 {
@@ -13,8 +25,13 @@ class Replace
         std::string string_to_replace;
 
     public:
-        Replace(std::string &filename, std::string &string_to_find, std::string &string_to_replace);
-        bool checker();
+        Replace();
+        void        setReplace(std::string filename, std::string string_to_find, std::string string_to_replace);
+        std::string getReplaceinFile();
+        std::string getReplaceoutFile();
+        std::string getReplacestring_to_find();
+        std::string getReplacestring_to_replace();
+        int         checker();
 
 };
 

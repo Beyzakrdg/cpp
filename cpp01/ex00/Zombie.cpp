@@ -6,7 +6,7 @@
 /*   By: bekarada <bekarada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 18:00:00 by bekarada          #+#    #+#             */
-/*   Updated: 2025/06/25 10:50:43 by bekarada         ###   ########.fr       */
+/*   Updated: 2025/06/27 15:59:44 by bekarada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ Zombie::~Zombie()
 
 void    Zombie::announce(void)
 {
-    std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+    std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }

@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bekarada <bekarada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/23 17:59:51 by bekarada          #+#    #+#             */
-/*   Updated: 2025/06/27 15:59:21 by bekarada         ###   ########.fr       */
+/*   Created: 2025/06/27 12:05:16 by bekarada          #+#    #+#             */
+/*   Updated: 2025/06/27 12:17:40 by bekarada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HARL_HPP
+#define HARL_HPP
 
-Zombie* newZombie(std::string name);
-void randomChump(std::string name);
+#include <iostream>
 
-int main()
+class Harl
 {
-    Zombie* heapZombie = newZombie("Zombie1111");
-    heapZombie->announce();
-    randomChump("Zombie2222");
-    delete heapZombie;
-    return (0);
-}
+    private:
+        int level;
+        void debug( void );
+        void info( void );
+        void warning( void );
+        void error( void ); 
+    public:
+        Harl();
+        void    setlevel(std::string level);
+        int     getlevel();
+        void    proccess();
+};
+
+#endif
