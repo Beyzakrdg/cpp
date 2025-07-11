@@ -9,13 +9,13 @@ Fixed::Fixed()
 Fixed::Fixed(const int intNumber)
 {
     std::cout << "Int constructor called" << std::endl;
-    stored = intNumber << number;
+    stored = intNumber << numberBit;
 }
 
 Fixed::Fixed(const float floatNumber)
 {
     std::cout << "Float constructor called" << std::endl;
-    stored = roundf(floatNumber * (1 << number));
+    stored = roundf(floatNumber * (1 << numberBit));
 }
 
 Fixed::Fixed(const Fixed& num) 
@@ -34,7 +34,7 @@ Fixed& Fixed::operator=(const Fixed& num)
 
 float Fixed::toFloat( void ) const
 {
-    return ((float)stored / (1 << number));
+    return ((float)stored / (1 << numberBit));
 }
 
 int Fixed::toInt( void ) const

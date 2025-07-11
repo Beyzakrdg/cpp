@@ -8,7 +8,7 @@ class Fixed
 {
     private:
         int stored;
-        static const int number = 8;
+        static const int numberBit = 8;
     public:
         Fixed();
         Fixed(const Fixed &num);
