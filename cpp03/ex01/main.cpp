@@ -2,19 +2,14 @@
 
 int main()
 {
-    ScavTrap scav("Beyza");
+    ScavTrap st1;
+    ScavTrap st2(st1);
+    ScavTrap st3("beyza");
+    ScavTrap st4;
+    st4 = st3;
 
-    scav.attack("Enemy");
-    scav.takeDamage(30);
-    scav.beRepaired(20);
-    scav.guardGate();
-
-    ScavTrap scav2 = scav;
-    scav2.attack("Enemy2");
-
-    ScavTrap scav3;
-    scav3 = scav;
-    scav3.guardGate();
-
-    return 0;
+    st1.attack(st3.getName());
+    st3.takeDamage(st1.getEnergyPoints());
+    st1.beRepaired(22);
+    st1.guardGate();
 }
